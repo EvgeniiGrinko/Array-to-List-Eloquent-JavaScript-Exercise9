@@ -1,13 +1,11 @@
 let samplearray = [2,5,6,1,7,4,56,12,34,32,30,0,1];
 let arrayTolist = function(array){
-    let list=[];
-    n = array.length;
-    for(let i = 0;i<array.length;i++){
-        list.push("{value: "+ array[i] +",\n rest: { \n");
+    let list1 = [];
+    for(let a = array.length; a>=0;a--){
+        let y = array.slice(a);
+        let list = {value: array[a], rest:y};
+        list1.unshift(list);
     }
-    for(let i = 0;i<array.length;i++){
-        list.push("}\n");
-    }
-    return list
+    return list1
 }
 arrayTolist(samplearray);
